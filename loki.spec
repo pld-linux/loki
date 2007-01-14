@@ -1,9 +1,11 @@
+# TODO: optflags
 Summary:	Loki C++ Library
+Summary(pl):	Biblioteka Loki C++
 Name:		loki
 Version:	0.1.5
 Release:	0.1
-License:	MIT License
-Group:		Development/Libraries
+License:	MIT
+Group:		Libraries
 Source0:	http://dl.sourceforge.net/loki-lib/%{name}-%{version}.tar.gz
 # Source0-md5:	f246e9e91b46d4e55ce36193984697e6
 URL:		http://sourceforge.net/projects/loki-lib/
@@ -13,26 +15,44 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A C++ library of designs, containing flexible implementations of
 common design patterns and idioms.
 
+%description -l pl
+Biblioteka projektów C++, zawieraj±ca elastyczne implementacje
+popularnych szablonów projektów i idiomów.
+
 %package devel
-Summary:	The Loki C++ headers and development libraries
-Group:		Libraries
+Summary:	The Loki C++ headers
+Summary(pl):	Pliki nag³ówkowe biblioteki Loki C++
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Headers, shared object symlinks for the Loki C++ Library
+Headers, shared object symlink for the Loki C++ Library.
+
+%description devel -l pl
+Pliki nag³ówkowe i dowi±zanie symboliczne dla biblioteki Loki C++.
 
 %package static
-Summary:	The Loki C++ development libraries
-Group:		Libraries
+Summary:	The Loki C++ static library
+Summary(pl):	Statyczna biblioteka Loki C++
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-static libraries for the Loki C++ Library
+Static Loki C++ Library.
+
+%description static -l pl
+Statyczna biblioteka Loki C++.
 
 %package doc
-Summary:	The Loki C++ html docs
-Group:		Libraries
+Summary:	The Loki C++ HTML docs
+Summary(pl):	Dokumentacja HTML do biblioteki Loki C++
+Group:		Documentation
 
 %description doc
-HTML documentation files for the Loki C++ Library
+HTML documentation files for the Loki C++ Library.
+
+%description doc -l pl
+Dokumentacja HTML do biblioteki Loki C++.
 
 %prep
 %setup -q
@@ -60,8 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libloki.so
 %{_includedir}/loki
-%{_libdir}/libloki.so
 
 %files static
 %defattr(644,root,root,755)
