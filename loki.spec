@@ -1,6 +1,6 @@
 # TODO: optflags
 Summary:	Loki C++ Library
-Summary(pl):	Biblioteka Loki C++
+Summary(pl.UTF-8):   Biblioteka Loki C++
 Name:		loki
 Version:	0.1.5
 Release:	0.1
@@ -15,43 +15,43 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A C++ library of designs, containing flexible implementations of
 common design patterns and idioms.
 
-%description -l pl
-Biblioteka projekt體 C++, zawieraj眂a elastyczne implementacje
-popularnych szablon體 projekt體 i idiom體.
+%description -l pl.UTF-8
+Biblioteka projekt贸w C++, zawieraj膮ca elastyczne implementacje
+popularnych szablon贸w projekt贸w i idiom贸w.
 
 %package devel
 Summary:	The Loki C++ headers
-Summary(pl):	Pliki nag丑wkowe biblioteki Loki C++
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe biblioteki Loki C++
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Headers, shared object symlink for the Loki C++ Library.
 
-%description devel -l pl
-Pliki nag丑wkowe i dowi眤anie symboliczne dla biblioteki Loki C++.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe i dowi膮zanie symboliczne dla biblioteki Loki C++.
 
 %package static
 Summary:	The Loki C++ static library
-Summary(pl):	Statyczna biblioteka Loki C++
+Summary(pl.UTF-8):   Statyczna biblioteka Loki C++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static Loki C++ Library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka Loki C++.
 
 %package doc
 Summary:	The Loki C++ HTML docs
-Summary(pl):	Dokumentacja HTML do biblioteki Loki C++
+Summary(pl.UTF-8):   Dokumentacja HTML do biblioteki Loki C++
 Group:		Documentation
 
 %description doc
 HTML documentation files for the Loki C++ Library.
 
-%description doc -l pl
+%description doc -l pl.UTF-8
 Dokumentacja HTML do biblioteki Loki C++.
 
 %prep
