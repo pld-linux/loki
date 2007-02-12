@@ -1,6 +1,6 @@
 # TODO: optflags
 Summary:	Loki C++ Library
-Summary(pl.UTF-8):   Biblioteka Loki C++
+Summary(pl.UTF-8):	Biblioteka Loki C++
 Name:		loki
 Version:	0.1.5
 Release:	0.1
@@ -21,7 +21,7 @@ popularnych szablonów projektów i idiomów.
 
 %package devel
 Summary:	The Loki C++ headers
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki Loki C++
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Loki C++
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -33,7 +33,7 @@ Pliki nagłówkowe i dowiązanie symboliczne dla biblioteki Loki C++.
 
 %package static
 Summary:	The Loki C++ static library
-Summary(pl.UTF-8):   Statyczna biblioteka Loki C++
+Summary(pl.UTF-8):	Statyczna biblioteka Loki C++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -45,7 +45,7 @@ Statyczna biblioteka Loki C++.
 
 %package doc
 Summary:	The Loki C++ HTML docs
-Summary(pl.UTF-8):   Dokumentacja HTML do biblioteki Loki C++
+Summary(pl.UTF-8):	Dokumentacja HTML do biblioteki Loki C++
 Group:		Documentation
 
 %description doc
