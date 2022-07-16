@@ -1,14 +1,14 @@
-# TODO: optflags
 Summary:	Loki C++ Library
 Summary(pl.UTF-8):	Biblioteka Loki C++
 Name:		loki
-Version:	0.1.5
-Release:	0.1
+Version:	0.1.7
+Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/loki-lib/%{name}-%{version}.tar.gz
-# Source0-md5:	f246e9e91b46d4e55ce36193984697e6
-URL:		http://sourceforge.net/projects/loki-lib/
+Source0:	https://download.sourceforge.net/loki-lib/%{name}-%{version}.tar.bz2
+# Source0-md5:	33a24bcbb99fa2ec8fcbbab65649f3f6
+Patch0:		multilib.patch
+URL:		https://sourceforge.net/projects/loki-lib/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -56,15 +56,18 @@ Dokumentacja HTML do biblioteki Loki C++.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make} build-static build-shared \
+	CXXFLAGS="%{rpmcxxflags} -std=c++11" \
 	CC="%{__cc}" \
 	CXX="%{__cxx}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
+	libdir=%{_lib} \
 	prefix=$RPM_BUILD_ROOT%{_prefix}
 
 %clean

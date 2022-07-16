@@ -1,0 +1,28 @@
+--- loki-0.1.7/Makefile.common~	2007-05-29 04:26:26.000000000 +0200
++++ loki-0.1.7/Makefile.common	2022-07-16 08:28:09.963817228 +0200
+@@ -5,3 +5,4 @@
+ CXXFLAGS := $(CXXWARNFLAGS) -g -O2
+ 
+ prefix := /usr
++libdir := lib
+--- loki-0.1.7/src/Makefile~	2009-01-26 20:45:54.000000000 +0100
++++ loki-0.1.7/src/Makefile	2022-07-16 08:29:11.657266243 +0200
+@@ -74,13 +74,13 @@
+ install: install-static install-shared
+ 
+ install-static: $(RESULT_DIR)$(STATIC_LIB)
+-	mkdir -p $(prefix)/lib
+-	$(INSTALL_DATA) $(RESULT_DIR)$(STATIC_LIB) $(prefix)/lib
++	mkdir -p $(prefix)/$(libdir)
++	$(INSTALL_DATA) $(RESULT_DIR)$(STATIC_LIB) $(prefix)/$(libdir)
+ 
+ install-shared: $(RESULT_DIR)$(SHARED_LIB_VERSIONED)
+-	mkdir -p $(prefix)/lib
+-	$(INSTALL_DATA) $(RESULT_DIR)$(SHARED_LIB_VERSIONED) $(prefix)/lib
+-	cd $(prefix)/lib; ln -s $(SHARED_LIB_VERSIONED) $(SHARED_LIB_BASE)
++	mkdir -p $(prefix)/$(libdir)
++	$(INSTALL_DATA) $(RESULT_DIR)$(SHARED_LIB_VERSIONED) $(prefix)/$(libdir)
++	cd $(prefix)/$(libdir); ln -s $(SHARED_LIB_VERSIONED) $(SHARED_LIB_BASE)
+ 
+ %.lo : %.cpp
+ 	$(CXX) -c $(CXXFLAGS) -fPIC $(CPPFLAGS) -o $@ $<
